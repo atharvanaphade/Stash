@@ -1,2 +1,8 @@
 /.cph
 /*.class
+/*.out
+/*.class
+/*.cpp:tests
+/*.java:tests
+/*.py:tests
+/*.bin

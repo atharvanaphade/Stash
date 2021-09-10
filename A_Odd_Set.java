@@ -16,4 +16,4 @@ public class A_Odd_Set {
             else System.out.println("Yes");
         }
     }
-}
+}`
