@@ -1,0 +1,9 @@
+[
+	{
+		"correct_answers":
+		[
+			"Case #1: Possible\n997 997 \n1 1 \nCase #2: Possible\n9 1 8 \n1 1 1 \nCase #3: Possible\n1 1 1 \n1 1 1 \n1 1 1 \n1 1 1 \nCase #4: Impossible"
+		],
+		"test": "4\n2 2 999 999\n2 3 12 11\n4 3 6 6\n50 50 1 1\n"
+	}
+]
