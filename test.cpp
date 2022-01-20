@@ -1,70 +1,36 @@
-#include <iostream>
+#include <bits/stdc++.h>
+
 using namespace std;
-class first
-{ //user defined class
-public:
-    int x, y; //complex number x+yi
 
-public:
-    first()
-    { //default constructor with 0 + 0i
-        x = 0;
-        y = 0;
+int main () {
+    int n; cin >> n;
+    vector<int> arr;
+    for (int i = 0; i < n; i++) {
+        int temp; cin >> temp;
+        arr.push_back(temp);
     }
 
-    first(int r, int i) //Parameterized constructor
-    {
-        x = r;
-        y = i;
+    vector<int> sum;
+    for (int i = 0; i < n; i++) {
+        vector<int> path;
+        int j = i;
+        int tempSum = 0;
+        while (arr[i] < arr.size() and arr[j] != i and arr[j] != -1 and !(find(path.begin(), path.end(), j) != path.end())) {
+            path.push_back(j);
+            tempSum += j;
+            j = arr[j];
+            if (arr[j] == i) {
+                tempSum += j;
+                break;
+            }
+        }
+        if (i < n and i == arr[j]) {
+            sum.push_back(tempSum);
+        }
     }
-
-    void print(); //declaration of print function;
-    void input();
-
-    first operator+(first const &obj) // overloaded + operator
-    {
-        first f1;
-        f1.x = x + obj.x;
-        f1.y = y + obj.y;
-        return (f1);
-    }
-    first operator*(first const &obj) // overloaded * operator
-    {
-        first f1;
-        f1.x = x * obj.x - y * obj.y;
-        f1.y = y * obj.x + x * obj.y;
-        return (f1);
-    }
-};
-
-void first ::print() //Definition of print function
-{
-    cout << "Complex number:   " << x << "+" << y << "i" << endl;
-}
-
-void first ::input()
-{
-    cout<<"Input the real part ";
-    cin>>x;
-    cout<<"Input the imaginary part ";
-    cin>>y;
-}
-
-int main() //addition  a+bi "+"  c+di    = (a+c) + (b+d)i)
-{  
-    first hi;
-    first h1,h2;
-    cout<<"Input the first number "<<endl;
-    h1.input();
-    cout<<"Input the second number "<<endl;
-    h2.input();
-    first h3;
-    first h4;
-    h3 = h1 + h2;
-    h4 = h1 * h2;
-    cout<<"Addtiton: ";
-    h3.print();
-    cout<<"Multiplication: ";
-    h4.print();
-    return 0;
+    if (sum.size() == 0) {
+            cout << -1 << endl;
+            return 0;
+        }
+    cout << *max_element(sum.begin(), sum.end()) << endl;
 }

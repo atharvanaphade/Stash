@@ -1,0 +1,25 @@
+Barry works as a chemist in a science lab, Barry is working on a new experiment.
+In this experiment, Bary prepares a list of chemical elements, each element having its own chemical reaction power. Bary needs to select two elements and reacting the two elements together, the result of this reaction is the subtraction of the chemical power of the second element from the first element, Bary wants the result to be as close as possible to a value Bary had select before the experiment.
+
+The problem here is that Bary needs to repeat the reaction many times for different pairs of elements to get the closest pair to the desired result, each reaction costs time and materials, so Bary needs to select the right elements before the reaction. If there are many options, Bary selects the one that the summation of the chemical reaction powers of them is minimized.
+
+Given the desired result and the list of elements chemical reaction power, Help Bary to determine the summation of the chemical reaction power of the two elements Bary should select.
+
+Example
+
+Let's assume the desired result  = 4, the size of the elements chemical reaction power list  = 5 and the list of elements chemical reaction power[2, 1, 0, 7, 2] the two selected powers are {7, 2} their subtraction = 5, the difference between subtraction and desired result is 1 and their sum is 9.
+
+Function description
+
+Complete the solve function provided in the editor. This function takes the following 3 parameters and returns the summation of the chemical reaction power of the two elements Bary should select.
+: Represents an integer denoting the desired result.
+: Represents an integer denoting the length of powers list.
+: Represents an integer array denoting the elements of powers list.
+Input format
+
+Note: This is the input format that you must use to provide custom input (available above the Compile and Test button).
+The first line contains an integer, , denoting the desired result
+The second line contains an integer, , denoting the number of elements in the  list.
+Each line  of the  subsequent lines  contains an integer describing .
+Output format
+Print the summation of the chemical reaction power of the two elements Bary should select.
