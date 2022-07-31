@@ -1,36 +1,31 @@
 #include <bits/stdc++.h>
+#define MAX 256
 
 using namespace std;
 
-int main () {
-    int n; cin >> n;
-    vector<int> arr;
-    for (int i = 0; i < n; i++) {
-        int temp; cin >> temp;
-        arr.push_back(temp);
-    }
+bool cmp (char arr1[], char arr2[]) {
+	for (int i = 0; i < MAX; i++) {
+		if (arr1[i] != arr2[i]) {
+			return 0;
+		}
+	}
+	return 1;
+}
 
-    vector<int> sum;
-    for (int i = 0; i < n; i++) {
-        vector<int> path;
-        int j = i;
-        int tempSum = 0;
-        while (arr[i] < arr.size() and arr[j] != i and arr[j] != -1 and !(find(path.begin(), path.end(), j) != path.end())) {
-            path.push_back(j);
-            tempSum += j;
-            j = arr[j];
-            if (arr[j] == i) {
-                tempSum += j;
-                break;
-            }
-        }
-        if (i < n and i == arr[j]) {
-            sum.push_back(tempSum);
-        }
+void search(char* pat, char* txt) {
+	int m = strlen(pat), n = strlen(txt);
+	char countP[MAX] = {0}, countTW[MAX] = {0};
+	for (int i = 0; i < m; i++) {
+		(countP[pat[i]])++;
+        (countTW[txt[i]])++;
+	}
+	for (int i = m; i < n; i++) {
+        if (cmp(countP, countTW))
+            cout << (i - m) << endl;
+        (countTW[txt[i]])++;
+        countTW[txt[i-m]]--;
     }
-    if (sum.size() == 0) {
-            cout << -1 << endl;
-            return 0;
-        }
-    cout << *max_element(sum.begin(), sum.end()) << endl;
+ 
+    if (cmp(countP, countTW))
+        cout << (n - m) << endl;
 }
