@@ -20,7 +20,7 @@ int countHighlyProfitableMonths(vector<int> stockPrices,int k){
             ans+=(x-k+1);
     }
     return ans;
-}
+}// nn
 
 int main () {
 	return 0;
