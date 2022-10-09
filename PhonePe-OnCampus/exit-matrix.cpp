@@ -1,4 +1,5 @@
 // Count the number of ways to exit a matrix[n][m] from given (sx, sy) in at most k steps.
+//bekar company
 #include <bits/stdc++.h>
 
 using namespace std;
