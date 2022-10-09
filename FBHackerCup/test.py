@@ -45,3 +45,5 @@ def solution():
 
 for t in range(T):
     print("Case #{}".format(t+1), solution())
+    
+    // no error found
