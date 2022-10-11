@@ -2,6 +2,8 @@
 
 using namespace std;
 
+
+
 int main () {
 	int tc; cin >> tc;
 	for (int tt = 1; tt <= tc; tt++) {
