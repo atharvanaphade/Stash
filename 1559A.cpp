@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+// nn
 
 inline auto solve () {
 	int n; cin >> n;
